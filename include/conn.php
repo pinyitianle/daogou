@@ -15,8 +15,8 @@ define('PREFIX','fstk_');	              //数据表前缀
 $conn=mysql_connect(SERVERNAME,DBUSERNAME,DBPSW) or die ("数据库连接失败,请修改根目录下的conn.php中的参数后再进行操作");
 $db_selected=mysql_select_db(DBNAME,$conn);
 if(!$db_selected){
-	mysql_query("create database wanrenwang DEFAULT CHARACTER SET gbk COLLATE gbk_chinese_ci",$conn);
+	mysql_query("create database wanrenwang DEFAULT CHARACTER SET utf8 COLLATE utf8",$conn);
 	$new_db_selected=mysql_select_db(DBNAME,$conn);
 }else{
-	mysql_query("set names gb2312");
+	mysql_query("set names utf8");
 }
